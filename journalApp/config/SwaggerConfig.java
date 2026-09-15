@@ -26,12 +26,12 @@ public class SwaggerConfig {
                 )
                 .servers(Arrays.asList(new Server().url("http://localhost:8081").description("local"),
                         new Server().url("http://localhost:8082").description("live")))
-                .tags(Arrays.asList(
+                .tags(Arrays.asList(  
                         new Tag().name("Public APIs"),
                         new Tag().name("User APIs"),
                         new Tag().name("Journal APIs"),
                         new Tag().name("Admin APIs")
-                ))
+                )) //ordering
                 .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
                 .components(new Components().addSecuritySchemes(
                         "bearerAuth", new SecurityScheme()
